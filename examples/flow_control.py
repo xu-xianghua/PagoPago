@@ -55,7 +55,7 @@ def test_solver(solve=True):
     m4 = 0.025
     m5 = 0.02
     if solve and solver.check_network():
-        print('solve grad control to pp1.LeD and pp2.LeD')
+        print('solve grad control to pp4.LeD and pp5.LeD')
         var1 = [b4, pp4, 'LeD']
         var2 = [b5, pp5, 'LeD']
         while True:
@@ -71,10 +71,10 @@ def test_solver(solve=True):
             y2 = m5 - b5.mf
             dx1 = (d*y1 - b*y2)/(a*d - b*c)
             dx2 = (a*y2 - c*y1)/(a*d - b*c)
-            if abs(dx1) > 0.3*pp1.LeD:
-                dx1 = 0.3*pp1.LeD*dx1/abs(dx1)
-            if abs(dx2) > 0.3*pp2.LeD:
-                dx2 = 0.3*pp2.LeD*dx2/abs(dx2)
+            if abs(dx1) > 0.3*pp4.LeD:
+                dx1 = 0.3*pp4.LeD*dx1/abs(dx1)
+            if abs(dx2) > 0.3*pp5.LeD:
+                dx2 = 0.3*pp5.LeD*dx2/abs(dx2)
 
             pp4.LeD += dx1
             pp5.LeD += dx2
