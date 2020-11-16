@@ -73,8 +73,8 @@ class Branch:
     def update_energy(self):
         self.module.update_energy()
 
-    def energy_coef_grad(self, var, h_up):
-        return self.module.energy_coef_grad(var[1:], h_up)
+    def energy_var_grad(self, var, h_up):
+        return self.module.energy_var_grad(var[1:], h_up)
 
     def check_flow_ballance(self, err=1e-10):
         return abs(self.upstream.p - self.downstream.p - self.pressure_drop(self.mf)) < err
